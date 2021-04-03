@@ -11,7 +11,7 @@ find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR})
 
 
-add_executable(gol main.c  animation.c graphics.c fileio.c  )
+add_executable(gol main.c  animation.c graphics.c input.c  )
 
 
 
