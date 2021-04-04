@@ -13,6 +13,6 @@ include_directories(${SDL2_INCLUDE_DIR})
 
 add_executable(gol main.c  animation.c graphics.c input.c  )
 
-
+add_executable(test-report animation-test.c unity.c )
 
 target_link_libraries(gol ${SDL2_LIBRARIES})

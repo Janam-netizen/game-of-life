@@ -44,7 +44,7 @@ int right_edge(int row, int col);
 int up_edge(int row, int col);
 
 int down_edge(int row, int col);
-
+int no_of_neighbors(char grid[10][10],int row,int col);
 char update_state(char grid[MaxRow][MaxCol], int row, int col);
 
 void reset(char grid[MaxCol][MaxCol]);
