@@ -11,8 +11,21 @@ and may not be redistributed without written permission.*/
 //#include <cmath>
 #include <unistd.h>
 #include <time.h>
+#include <stdlib.h>
 //Screen dimension constants
-
+void writetofile(char grid[10][10])
+{
+	FILE *fp = fopen("output.txt","w");
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			putc(grid[i][j], fp);
+		}
+		putc('\n', fp);
+	}
+	fclose(fp);
+}
 int main()
 {
 	//reset(grid);
@@ -58,6 +71,7 @@ int main()
 
 					execute_game(grid, new_grid);
 					draw_grid(grid, gRenderer);
+					writetofile(grid);
 					//draw_grid(grid, gRenderer);
 				}
 				else
@@ -66,6 +80,7 @@ int main()
 					display_grid(new_grid);
 					execute_game(new_grid, grid);
 					draw_grid(new_grid, gRenderer);
+					writetofile(new_grid);
 				}
 
 				//grid[0][i]='*';
@@ -79,4 +94,7 @@ int main()
 			}*/
 		}
 	}
+
+
+printf("Final state of world written to ouput.txt file.\n");
 }
